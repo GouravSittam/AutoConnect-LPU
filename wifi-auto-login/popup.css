@@ -1,0 +1,299 @@
+/* ── LPU WiFi Auto-Login Popup Styles ── */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  width: 370px;
+  min-height: 420px;
+  background: linear-gradient(135deg, #0f0c29 0%, #1a1a40 40%, #24243e 100%);
+  color: #e4e4f0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Card ── */
+.card {
+  padding: 24px 22px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.header-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #6c63ff 0%, #48c6ef 100%);
+  color: #fff;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 20px rgba(108, 99, 255, 0.35);
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 4px 20px rgba(108, 99, 255, 0.35); }
+  50% { box-shadow: 0 4px 30px rgba(72, 198, 239, 0.55); }
+}
+
+.header h1 {
+  font-size: 17px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #6c63ff, #48c6ef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: #8888aa;
+  margin-top: 2px;
+}
+
+/* ── Status Toast ── */
+.status {
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.status.hidden {
+  display: none;
+}
+
+.status.success {
+  background: rgba(72, 198, 120, 0.15);
+  border: 1px solid rgba(72, 198, 120, 0.3);
+  color: #48c678;
+}
+
+.status.error {
+  background: rgba(255, 85, 85, 0.15);
+  border: 1px solid rgba(255, 85, 85, 0.3);
+  color: #ff5555;
+}
+
+.status.info {
+  background: rgba(108, 99, 255, 0.15);
+  border: 1px solid rgba(108, 99, 255, 0.3);
+  color: #9b94ff;
+}
+
+/* ── Section Labels ── */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #6c63ff;
+  margin-top: 12px;
+  margin-bottom: 2px;
+}
+
+.section-label .optional {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #5a5a7a;
+  font-size: 10px;
+}
+
+/* ── Advanced collapsible ── */
+.advanced-section {
+  margin-top: 8px;
+}
+
+.advanced-section summary {
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.advanced-section summary::-webkit-details-marker {
+  display: none;
+}
+
+.advanced-section .clickable:hover {
+  color: #48c6ef;
+}
+
+.advanced-fields {
+  padding-top: 6px;
+}
+
+.helper-text {
+  font-size: 10px;
+  color: #5a5a7a;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+/* ── Fields ── */
+.field {
+  margin-bottom: 8px;
+}
+
+.field label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: #a0a0c0;
+  margin-bottom: 4px;
+}
+
+.field input {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(108, 99, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  color: #e4e4f0;
+  font-size: 13px;
+  font-family: inherit;
+  transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+  outline: none;
+}
+
+.field input::placeholder {
+  color: #5a5a7a;
+  font-size: 12px;
+}
+
+.field input:focus {
+  border-color: #6c63ff;
+  background: rgba(108, 99, 255, 0.06);
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.12);
+}
+
+/* ── Password Toggle ── */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 40px;
+}
+
+.toggle-btn {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6c63ff;
+  padding: 6px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-btn:hover {
+  background: rgba(108, 99, 255, 0.12);
+}
+
+/* ── Buttons ── */
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 0;
+  border: none;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.25s, opacity 0.2s;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6c63ff 0%, #48c6ef 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(108, 99, 255, 0.3);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 24px rgba(108, 99, 255, 0.45);
+}
+
+.btn-danger {
+  background: rgba(255, 85, 85, 0.12);
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 85, 85, 0.2);
+}
+
+.btn-danger:hover {
+  background: rgba(255, 85, 85, 0.2);
+}
+
+/* ── Info Box ── */
+.info-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(108, 99, 255, 0.06);
+  border: 1px solid rgba(108, 99, 255, 0.12);
+  font-size: 11px;
+  color: #8888aa;
+  line-height: 1.4;
+}
+
+.info-box strong {
+  color: #48c6ef;
+}
+
+.info-box svg {
+  flex-shrink: 0;
+  color: #6c63ff;
+}
+
+/* ── Footer ── */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 10px;
+  color: #4a4a6a;
+}
